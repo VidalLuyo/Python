@@ -1,7 +1,5 @@
 #
 
-
-
 def suma(**detalles):
     total = sum(detalles.values())
     print(f"El total es : {total}")
