@@ -14,7 +14,7 @@ COMANDOS PARA GIT
 
 
 
-
+----------------------------------------------
 4. Guardar cambios al repositorio
 - git add .
 
@@ -28,3 +28,12 @@ COMANDOS PARA GIT
 
 7. Subir cambiar al repositorio
 - git push
+--------------------------------------------
+
+-- Comandos extras
+
+8.Limpiar Consola
+- clear || cls
+
+9. Ver Historial de Comandos
+- history
