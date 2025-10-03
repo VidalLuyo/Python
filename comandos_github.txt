@@ -8,8 +8,23 @@ COMANDOS PARA GIT
 
 3.Pasar de una rama a otra rama osea (rama 1 --> rama 2 || rama 2 --> rama 1) 
 - git checkout <<nombre_de_la_rama>>
+(ejemplo)
 - git checkout main
 - git checkout develop
 
-4. Subir cambios al repositorio
+
+
+
+4. Guardar cambios al repositorio
 - git add .
+
+5. Ver estado de la rama
+- git status
+
+6. Colocar un comentario en el cambio realizado
+- git commit -m "<<comentario>>"
+(ejemplo)
+- git commit -m "Comandos para git"  
+
+7. Subir cambiar al repositorio
+- git push
