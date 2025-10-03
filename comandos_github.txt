@@ -37,3 +37,12 @@ COMANDOS PARA GIT
 
 9. Ver Historial de Comandos
 - history
+
+10. Configurar entorno local de git
+- git config --global user.name "JesúsVidalLuyo"
+- git config --global user.email jesus.luyoc@gmail.com
+
+11. Clonar un repositorio
+- git clone <<URL>>
+(ejemplo)
+- git clone https://github.com/VidalLuyo/Python.git
