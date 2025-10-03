@@ -1,0 +1,15 @@
+COMANDOS PARA GIT
+
+1.Traer datos del repositorio
+- git pull
+
+2.Ver la rama actuales y en la que te encuentras
+- git branch
+
+3.Pasar de una rama a otra rama osea (rama 1 --> rama 2 || rama 2 --> rama 1) 
+- git checkout <<nombre_de_la_rama>>
+- git checkout main
+- git checkout develop
+
+4. Subir cambios al repositorio
+- git add .
