@@ -13,7 +13,6 @@ COMANDOS PARA GIT
 - git checkout develop
 
 
-
 ----------------------------------------------
 4. Guardar cambios al repositorio
 - git add .
