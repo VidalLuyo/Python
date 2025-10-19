@@ -1,0 +1,64 @@
+## Comandos para configurar docker
+
+## IMAGENES
+
+# Saber que version tengo en docker
+- docker --version || docker -v
+
+# Comando para descargar una imagen || q es tag? - Tag es la version de la img que vamos a descargar
+- docker pull <nombre_imagen>:<tag>
+
+# Descargar Imagen SQL Server 2019
+- docker pull mcr.microsoft.com/mssql/server:2019-latest
+
+#Listar las imagenes descargadas
+- docker images
+
+# Eliminar una images
+- docker rmi <id_imagen>
+
+---------------------------------------------
+
+## CONTENEDORES
+
+# Ver contenedores activos
+- docker ps
+
+# Ver todos los contendores activos o inactivos
+- docker ps -a
+
+# Creacion de un contenedor
+- docker run <opciones-configuracion> <nombre_imagen>
+
+- docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Admin@12345' -p 14033:1433 --name sql_server_container -d mcr.microsoft.com/mssql/server:2019-latest
+
+## Cuando no se usa por un tiempo el contenedor se pone en pausa
+- docker stop <Los cuatro 1eros digitos del id>
+- docker stop e683bien señ
+
+## Activar un contenedor inactivo a estado activos
+- docker start <Los cuatro 1eros digitos del id>
+- docker start e683
+
+# Los contenedores solo se pueden eliminar si estan apagados
+- docker rm <id_contenedor || nombre_contenedor>
+
+---------------------------------------
+CONECTARNOS CON EL CONTENEDOR EN DATABASE CLIENT
+
+ PASO 1: INSTALAMOS LA EXTENSION DATABASE CLIENT
+ PASO 2: NOS DIRIGIMOS A DATABASE CLIENT Y HACEMOS CLICK EN 'CREATE CONNECTION'
+ PASO 3: EN LA PARTE SUPERIOR COLOCAMOS UN NOMBRE EN MI CASO SQLSERVER
+ PASO 4: SELECCIONAMOS EL SERVERTYPE Y SELECCIONAMOS 'SQL SERVER'
+ PASO 5: NO MODIFICAMOS EL HOST Y EL USERNAME
+ PASO 6: MODIFICAMOS EL PUERTO QUE HEMOS PROGRAMADO AL MOMENTO DE CREAR EL CONTENEDOR,
+         EN MI CASO ES EL PUERTO '14033'
+ PASO 7: COLOCAMOS LA CONTRASEÑA CREADA TAMBIEN EN EL CONTENEDOR,
+         EN MI CASO 'Admin@12345' Y LE DAMOS EN 'SAVE'
+         DONDE SI TODO ESTA BIEN NOS DIRA 'Success!Connection Saved!' EN LA PARTE SUPERIOR
+ PASO 8: SE NOS CREARA EN LA PARTE DE DATABASE CLIENT EL NOMBRE DE LA CONEXION EN MI CASO 'SQLSERVER'
+        SI LO DESPLEGAMOS NOS APARECERA SECURITY, MASTER Y MODEL; DONDE VAMOS A TRABAJAR SIEMPRE SERA EN MASTER
+ PASO 9: DONDE DICE QUERY HACEMOS CLICK EN EL + Y CREAMOS UN NOMBRE A ESTA CONSULTA EN MI CASO SE LLAMARA 'DATABASE'
+ PASO 10: SI VOLVEMOS A DESPLEGAR QUERY ENCONTRAREMOS EL ARCHIVO CREADO LLAMADO EN MI CASO 'DATABASE'
+
+ -- LISTO PODEMOS EMPEZAR A PROGRAMAR NUESTRAS TABLAS Y ATRIBUTOS EN BASE DE DATOS
